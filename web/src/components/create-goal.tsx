@@ -1,13 +1,8 @@
-import logo from './assets/logo.svg'
-import letsStart from './assets/lets-start.svg'
-import { Plus, X } from 'lucide-react'
 import {
-  Dialog,
   DialogClose,
   DialogContent,
   DialogDescription,
   DialogTitle,
-  DialogTrigger,
 } from './ui/dialog'
 import { Button } from './ui/button'
 import { Label } from './ui/label'
@@ -17,6 +12,7 @@ import {
   RadioGroupIndicator,
   RadioGroupItem,
 } from './ui/radio-group'
+import { X } from 'lucide-react'
 
 export function CreateGoal() {
   return (
