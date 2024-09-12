@@ -1,5 +1,5 @@
-import logo from './assets/logo.svg'
-import letsStart from './assets/lets-start.svg'
+import logo from '../assets/logo.svg'
+import letStartImg from '../assets/lets-start.svg'
 import { Dialog, DialogTrigger } from './ui/dialog'
 import { Button } from './ui/button'
 import { Plus } from 'lucide-react'
@@ -10,7 +10,7 @@ export function EmptyGoals() {
     <Dialog>
       <div className="h-screen flex flex-col items-center justify-center gap-8">
         <img src={logo} alt="logo" />
-        <img src={letsStart} alt="logo" />
+        <img src={letStartImg} alt="let-start-img" />
         <p className="text-zinc-300 leading-relaxed max-w-80 text-center">
           Você ainda não cadastrou nenhuma meta, que tal cadastrar um agora
           mesmo?
