@@ -1,10 +1,12 @@
 import { Plus } from 'lucide-react'
 import { OutlineButton } from './ui/outline-button'
 import { getPendingGoals } from '../http/get-pending-goals'
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { CreateGoalCompletion } from '../http/create-goal-completion'
 
 export function PendingGoals() {
+  const queryCleint = useQueryClient()
+
   const { data } = useQuery({
     queryKey: ['pending-goals'],
     queryFn: getPendingGoals,
@@ -17,6 +19,8 @@ export function PendingGoals() {
 
   async function handleCompleteGoal(goalId: string) {
     await CreateGoalCompletion(goalId)
+
+    queryCleint.invalidateQueries({ queryKey: ['summary'] })
   }
 
   return (
